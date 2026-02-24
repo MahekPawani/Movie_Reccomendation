@@ -7,7 +7,7 @@ This project provides intelligent movie recommendations based on movie content s
 
 ---
 
-## 🚀 Features
+## Features
 
 - Content-Based Recommendation System
 - TF-IDF + Cosine Similarity
@@ -21,7 +21,7 @@ This project provides intelligent movie recommendations based on movie content s
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 1. Movie metadata is processed using TF-IDF vectorization.
 2. Cosine similarity is used to compute similarity between movies.
@@ -33,7 +33,7 @@ This project provides intelligent movie recommendations based on movie content s
 
 ---
 
-## 🛠 Technologies Used
+## Technologies Used
 
 - Python
 - Pandas
@@ -43,7 +43,7 @@ This project provides intelligent movie recommendations based on movie content s
 
 ---
 
-## 📦 Project Structure
+## Project Structure
 MovieRecommendation/
 │
 ├── app.py
@@ -58,23 +58,23 @@ MovieRecommendation/
 
 ---
 
-## ▶️ How to Run Locally
+##  How to Run Locally
 
-### 1️⃣ Clone the repository
+### 1.Clone the repository
 git clone <your-repository-url>
 cd MovieRecommendation
 
-### 2️⃣ Install dependencies
+### 2.Install dependencies
 pip install -r requirements.txt
 
-### 3️⃣ Run the application
+### 3. Run the application
 streamlit run app.py
 
 The application will open in your browser automatically.
 
 ---
 
-## 🔐 Family Safe Mode
+##  Family Safe Mode
 
 When enabled:
 - Filters movies containing unsafe keywords
@@ -83,7 +83,7 @@ When enabled:
 
 ---
 
-## 📚 Academic Context
+##  Academic Context
 
 This project was developed as part of coursework in **Open Source Tools for Data Science / Data Science**.
 
@@ -96,7 +96,7 @@ It demonstrates:
 
 ---
 
-## 📈 Future Improvements (Optional)
+##  Future Improvements (Optional)
 
 - Display movie ratings in search results
 - Add certification labels (U / U/A / A)
@@ -105,12 +105,15 @@ It demonstrates:
 
 ---
 
-## 👩‍💻 Author
-
+##  Author
 Mahek Pawani
+Swara Kuthe
+Rishit Nakra
+Dhruv Motwani
 
 ---
-
+## Reviewer
+   Dr. Vikas Choudhary
 ## 📌 Notes
 
 - This project uses relative file paths for portability.
