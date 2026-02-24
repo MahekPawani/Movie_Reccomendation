@@ -51,6 +51,7 @@ MovieRecommendation/
 ├── content_based.py
 ├── data_processing.py
 ├── moderation.py
+├── streamlit_app.py
 ├── imdb_movies.csv
 ├── requirements.txt
 ├── README.md
