@@ -106,14 +106,14 @@ It demonstrates:
 ---
 
 ##  Author
-Mahek Pawani
-Swara Kuthe
-Rishit Nakra
-Dhruv Motwani
+- Mahek Pawani
+- Swara Kuthe
+- Rishit Nakra
+- Dhruv Motwani
 
 ---
 ## Reviewer
-   Dr. Vikas Choudhary
+   Vikas Choudhary
 ## 📌 Notes
 
 - This project uses relative file paths for portability.
