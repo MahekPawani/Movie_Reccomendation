@@ -1,32 +1,60 @@
+# ------------------------
 # Python cache
+# ------------------------
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
+# ------------------------
 # Mac system files
+# ------------------------
 .DS_Store
 
+# ------------------------
+# Windows system files
+# ------------------------
+Thumbs.db
+
+# ------------------------
 # Virtual environments
+# ------------------------
 venv/
 env/
 .venv/
 
+# ------------------------
 # Streamlit cache & logs
+# ------------------------
 .streamlit/
 *.log
 
+# ------------------------
 # IDE files
+# ------------------------
 .vscode/
 .idea/
 
+# ------------------------
 # Build / packaging
+# ------------------------
 build/
 dist/
 *.egg-info/
 
-# Jupyter checkpoints (if used)
+# ------------------------
+# Jupyter notebooks checkpoints
+# ------------------------
 .ipynb_checkpoints/
 
+# ------------------------
 # Temporary files
-Thumbs.db
+# ------------------------
+*.tmp
+*.temp
+
+# ------------------------
+# Data files (you want only imdb_movies.csv)
+# ------------------------
+data/*.xlsx
+data/*.xls
