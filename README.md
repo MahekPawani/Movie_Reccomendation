@@ -3,7 +3,7 @@
 A Streamlit-based movie recommendation system built with Python, NLP, TF-IDF similarity, fuzzy search, typo-tolerance, and a Family-Safe mode.  
 Designed for academic submission, cross-platform compatibility, and clean reproducibility on any device.
 
-## 📘 About This Project
+## About This Project
 
 This system recommends movies using **Content-Based Filtering**, powered by TF-IDF vectorization and cosine similarity.  
 It includes smart search, typo tolerance, auto-suggestions, rating-based ranking, and multiple safety layers to filter adult/horror content.
@@ -19,7 +19,7 @@ It includes smart search, typo tolerance, auto-suggestions, rating-based ranking
 -  **Works on Mac, Windows, Linux, Google Colab, Jenkins, IDLE**
 -  **Lightweight & Portable**
 
-## 📂 Project Structure
+##  Project Structure
 <pre>
 MovieRecommendation/
 │
@@ -181,7 +181,7 @@ pipeline {
 
 ⸻
 
-👥 Authors
+ Authors
 	•	Mahek Pawani
 	•	Swara Kuthe
 	•	Rishit Nakra
