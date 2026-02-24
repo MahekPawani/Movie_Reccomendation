@@ -44,6 +44,8 @@ This project provides intelligent movie recommendations based on movie content s
 ---
 
 ## Project Structure
+
+<pre>
 MovieRecommendation/
 │
 ├── app.py
@@ -56,7 +58,7 @@ MovieRecommendation/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
-
+</pre>
 ---
 
 ##  How to Run Locally
