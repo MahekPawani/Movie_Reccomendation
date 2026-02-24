@@ -1,40 +1,79 @@
+# content_based.py
+
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-class ContentBasedRecommender:
-    def __init__(self, movies):
-        self.movies = movies
-        self.tfidf = TfidfVectorizer(stop_words='english')
+
+class ContentRecommender:
+
+    def __init__(self, df):
+        self.df = df.reset_index(drop=True)
+        self.tfidf = None
         self.similarity_matrix = None
-        self.indices = None
 
     def build_model(self):
-        self.movies['overview'] = self.movies['overview'].fillna('')
-        tfidf_matrix = self.tfidf.fit_transform(self.movies['overview'])
-        self.similarity_matrix = cosine_similarity(tfidf_matrix, tfidf_matrix)
-        self.indices = pd.Series(self.movies.index, index=self.movies['title']).drop_duplicates()
+        """
+        Builds TF-IDF model using description + genre.
+        """
 
-    def recommend(self, title, top_n=10):
-        if title not in self.indices:
+        # Combine useful text features
+        self.df["combined_features"] = (
+            self.df["description"].fillna("") + " " +
+            self.df["genre"].fillna("")
+        )
+
+        # Create TF-IDF matrix
+        self.tfidf = TfidfVectorizer(stop_words="english")
+
+        tfidf_matrix = self.tfidf.fit_transform(
+            self.df["combined_features"]
+        )
+
+        # Compute cosine similarity
+        self.similarity_matrix = cosine_similarity(tfidf_matrix)
+
+    def recommend(self, movie_title, top_n=10):
+        """
+        Returns list of recommended movie titles.
+        """
+
+        if not movie_title:
             return []
 
-        idx = self.indices[title]
+        movie_title = movie_title.lower().strip()
 
-        # Force single index
-        if isinstance(idx, pd.Series):
-            idx = idx.iloc[0]
+        # Check if movie exists
+        matches = self.df[
+            self.df["title"].str.lower() == movie_title
+        ]
 
-        sim_scores = list(enumerate(self.similarity_matrix[idx]))
+        if matches.empty:
+            return []
 
-        # Ensure similarity score is float
-        sim_scores = [(i, float(score)) for i, score in sim_scores]
+        idx = matches.index[0]
 
-        sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+        # Get similarity scores
+        sim_scores = list(
+            enumerate(self.similarity_matrix[idx])
+        )
 
-        sim_scores = sim_scores[1:top_n+1]
+        # Sort movies by similarity score
+        sim_scores = sorted(
+            sim_scores,
+            key=lambda x: x[1],
+            reverse=True
+        )
 
-        movie_indices = [i[0] for i in sim_scores]
+        # Remove itself
+        sim_scores = sim_scores[1: top_n + 1]
 
-        return self.movies['title'].iloc[movie_indices].tolist()
+        recommendations = []
 
+        for i, _ in sim_scores:
+            if 0 <= i < len(self.df):
+                recommendations.append(
+                    self.df.iloc[i]["title"]
+                )
+
+        return recommendations

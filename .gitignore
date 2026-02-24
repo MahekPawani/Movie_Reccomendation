@@ -1,0 +1,32 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Mac system files
+.DS_Store
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Streamlit cache & logs
+.streamlit/
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+
+# Jupyter checkpoints (if used)
+.ipynb_checkpoints/
+
+# Temporary files
+Thumbs.db
